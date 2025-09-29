@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { 
   Truck, 
   Calculator, 
@@ -13,19 +12,6 @@ import {
 } from "lucide-react";
 
 const Services = () => {
-  const getServiceUrl = (title: string) => {
-    const urlMap: { [key: string]: string } = {
-      "Logistics Solutions": "/services/logistics",
-      "Financial Consulting": "/services/financial",
-      "Legal Services": "/services/legal",
-      "ICT Solutions": "/services/ict",
-      "Agriculture": "/services/agriculture",
-      "Mining Operations": "/services/mining",
-      "Translation Services": "/services/translation"
-    };
-    return urlMap[title] || "/";
-  };
-
   const services = [
     {
       icon: Truck,
@@ -111,15 +97,13 @@ const Services = () => {
                   ))}
                 </div>
 
-                <Link to={getServiceUrl(service.title)}>
-                  <Button 
-                    variant="ghost" 
-                    className="group/btn p-0 h-auto text-primary hover:text-primary font-medium"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
-                </Link>
+                <Button 
+                  variant="ghost" 
+                  className="group/btn p-0 h-auto text-primary hover:text-primary font-medium"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                </Button>
               </CardContent>
             </Card>
           ))}
