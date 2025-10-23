@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Wheat, Leaf, Sprout, Tractor, Sun, Droplets } from "lucide-react";
+import { Wheat, Leaf, Sprout, Tractor, Sun, Droplets, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import agricultureHero from "@/assets/agriculture-hero.jpg";
 
 const AgriculturePage = () => {
@@ -42,6 +43,19 @@ const AgriculturePage = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      
+      {/* Breadcrumb */}
+      <div className="bg-muted/30 py-4 border-b">
+        <div className="container mx-auto px-6">
+          <nav className="flex items-center text-sm text-muted-foreground">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4 mx-2" />
+            <Link to="/#services" className="hover:text-primary transition-colors">Services</Link>
+            <ChevronRight className="w-4 h-4 mx-2" />
+            <span className="text-foreground">Agriculture Solutions</span>
+          </nav>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
@@ -107,6 +121,47 @@ const AgriculturePage = () => {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
+              Leading <span className="text-gradient">Agricultural Innovation</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Sustainable Practices</h3>
+                  <p className="text-muted-foreground">Environmentally responsible farming that preserves soil health and biodiversity.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Increased Yields</h3>
+                  <p className="text-muted-foreground">Proven methods to boost crop productivity and farm profitability.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Modern Technology</h3>
+                  <p className="text-muted-foreground">Precision agriculture tools including drones, sensors, and data analytics.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Expert Guidance</h3>
+                  <p className="text-muted-foreground">Agricultural specialists with decades of hands-on farming experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
@@ -118,12 +173,16 @@ const AgriculturePage = () => {
               Join the sustainable agriculture movement with our innovative farming solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="hover-lift">
-                Agricultural Assessment
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                Sustainability Guide
-              </Button>
+              <Link to="/#contact">
+                <Button size="lg" variant="secondary" className="hover-lift">
+                  Agricultural Assessment
+                </Button>
+              </Link>
+              <Link to="/">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Back to Home
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

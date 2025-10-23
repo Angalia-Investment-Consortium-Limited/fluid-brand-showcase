@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Pickaxe, Shield, TreePine, Users, Zap, Mountain } from "lucide-react";
+import { Pickaxe, Shield, TreePine, Users, Zap, Mountain, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import miningHero from "@/assets/mining-hero.jpg";
 
 const MiningPage = () => {
@@ -42,6 +43,19 @@ const MiningPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      
+      {/* Breadcrumb */}
+      <div className="bg-muted/30 py-4 border-b">
+        <div className="container mx-auto px-6">
+          <nav className="flex items-center text-sm text-muted-foreground">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <ChevronRight className="w-4 h-4 mx-2" />
+            <Link to="/#services" className="hover:text-primary transition-colors">Services</Link>
+            <ChevronRight className="w-4 h-4 mx-2" />
+            <span className="text-foreground">Mining Operations</span>
+          </nav>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
@@ -107,6 +121,47 @@ const MiningPage = () => {
         </div>
       </section>
 
+      {/* Why Choose Us */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
+              Responsible <span className="text-gradient">Mining Excellence</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Environmental Stewardship</h3>
+                  <p className="text-muted-foreground">Committed to minimizing ecological impact and restoring mined areas.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Community Partnership</h3>
+                  <p className="text-muted-foreground">Creating jobs and supporting local communities through sustainable development.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Safety First</h3>
+                  <p className="text-muted-foreground">World-class safety standards protecting workers and surrounding communities.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Advanced Technology</h3>
+                  <p className="text-muted-foreground">State-of-the-art equipment and innovative extraction methods.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
@@ -118,12 +173,16 @@ const MiningPage = () => {
               Join us in sustainable resource extraction that benefits communities and preserves the environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="hover-lift">
-                Mining Partnership
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                Environmental Impact
-              </Button>
+              <Link to="/#contact">
+                <Button size="lg" variant="secondary" className="hover-lift">
+                  Mining Partnership
+                </Button>
+              </Link>
+              <Link to="/">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Back to Home
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
