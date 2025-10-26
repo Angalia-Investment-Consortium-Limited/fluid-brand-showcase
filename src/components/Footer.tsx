@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 import rakestarLogo from "@/assets/rakestar-logo.png";
 
 const Footer = () => {
@@ -6,13 +7,13 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      "Logistics Solutions",
-      "Financial Consulting", 
-      "Legal Services",
-      "ICT Solutions",
-      "Agriculture",
-      "Mining Operations",
-      "Translation Services"
+      { name: "Logistics Solutions", path: "/services/logistics" },
+      { name: "Financial Consulting", path: "/services/financial" },
+      { name: "Legal Services", path: "/services/legal" },
+      { name: "ICT Solutions", path: "/services/ict" },
+      { name: "Agriculture", path: "/services/agriculture" },
+      { name: "Mining Operations", path: "/services/mining" },
+      { name: "Translation Services", path: "/services/translation" }
     ],
     company: [
       "About Us",
@@ -39,7 +40,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+            <Link to="/" className="flex items-center space-x-3 mb-6 w-fit hover:opacity-80 transition-opacity">
               <img 
                 src={rakestarLogo} 
                 alt="Rakestar Group Logo" 
@@ -48,7 +49,7 @@ const Footer = () => {
               <span className="font-display text-2xl font-semibold">
                 Rakestar Group
               </span>
-            </div>
+            </Link>
             <p className="text-secondary-foreground/80 leading-relaxed mb-6 max-w-md">
               Empowering progress through integrated excellence across logistics, finance, legal, ICT, agriculture, mining, and translation services worldwide.
             </p>
@@ -70,13 +71,13 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4 text-primary">Our Services</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
-                <li key={link}>
-                  <a 
-                    href="#services" 
+                <li key={link.name}>
+                  <Link 
+                    to={link.path}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
                   >
-                    {link}
-                  </a>
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

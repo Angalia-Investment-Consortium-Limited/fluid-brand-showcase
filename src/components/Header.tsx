@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import rakestarLogo from "@/assets/rakestar-logo.png";
 
@@ -35,7 +36,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo - Only visible when scrolled */}
           {isScrolled && (
-            <div className="flex items-center space-x-3 fade-in-left">
+            <Link to="/" className="flex items-center space-x-3 fade-in-left hover:opacity-80 transition-opacity">
               <img 
                 src={rakestarLogo} 
                 alt="Rakestar Group Logo" 
@@ -44,7 +45,7 @@ const Header = () => {
               <span className="font-display text-xl font-semibold text-foreground">
                 Rakestar Group
               </span>
-            </div>
+            </Link>
           )}
 
           {/* Desktop Navigation */}
