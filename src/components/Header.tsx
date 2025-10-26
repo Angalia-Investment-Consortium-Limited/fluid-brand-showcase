@@ -33,17 +33,19 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-3 fade-in-left">
-            <img 
-              src={rakestarLogo} 
-              alt="Rakestar Group Logo" 
-              className="h-10 w-auto transition-transform duration-300 hover:scale-105"
-            />
-            <span className="font-display text-xl font-semibold text-foreground">
-              Rakestar Group
-            </span>
-          </div>
+          {/* Logo - Only visible when scrolled */}
+          {isScrolled && (
+            <div className="flex items-center space-x-3 fade-in-left">
+              <img 
+                src={rakestarLogo} 
+                alt="Rakestar Group Logo" 
+                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+              />
+              <span className="font-display text-xl font-semibold text-foreground">
+                Rakestar Group
+              </span>
+            </div>
+          )}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
