@@ -12,6 +12,13 @@ import {
   ArrowRight,
   Sparkles
 } from "lucide-react";
+import logisticsHero from "@/assets/logistics-hero.jpg";
+import financialHero from "@/assets/financial-hero.jpg";
+import legalHero from "@/assets/legal-hero.jpg";
+import ictHero from "@/assets/ict-hero.jpg";
+import agricultureHero from "@/assets/agriculture-hero.jpg";
+import miningHero from "@/assets/mining-hero.jpg";
+import translationHero from "@/assets/translation-hero.jpg";
 
 const Services = () => {
   const services = [
@@ -21,7 +28,8 @@ const Services = () => {
       description: "End-to-end supply chain optimization, warehousing, distribution, and transportation management with customs compliance.",
       features: ["Supply Chain Management", "Warehousing & Distribution", "Transportation Management", "Customs & Compliance"],
       link: "/services/logistics",
-      gradient: "from-blue-500/10 to-cyan-500/10"
+      gradient: "from-blue-500/10 to-cyan-500/10",
+      image: logisticsHero
     },
     {
       icon: Calculator,
@@ -29,7 +37,8 @@ const Services = () => {
       description: "Expert guidance and strategic financial solutions for individuals, corporations, and institutions worldwide.",
       features: ["Corporate Finance", "Investment Advisory", "Risk Management", "Financial Planning"],
       link: "/services/financial",
-      gradient: "from-green-500/10 to-emerald-500/10"
+      gradient: "from-green-500/10 to-emerald-500/10",
+      image: financialHero
     },
     {
       icon: Scale,
@@ -37,7 +46,8 @@ const Services = () => {
       description: "Comprehensive legal counsel and representation across various practice areas with international expertise.",
       features: ["Corporate Law", "Commercial Litigation", "Regulatory Compliance", "International Law"],
       link: "/services/legal",
-      gradient: "from-purple-500/10 to-violet-500/10"
+      gradient: "from-purple-500/10 to-violet-500/10",
+      image: legalHero
     },
     {
       icon: Monitor,
@@ -45,7 +55,8 @@ const Services = () => {
       description: "Cutting-edge technology solutions including software development, system integration, and digital transformation.",
       features: ["Software Development", "System Integration", "Cloud Solutions", "Digital Transformation"],
       link: "/services/ict",
-      gradient: "from-orange-500/10 to-amber-500/10"
+      gradient: "from-orange-500/10 to-amber-500/10",
+      image: ictHero
     },
     {
       icon: Wheat,
@@ -53,7 +64,8 @@ const Services = () => {
       description: "Innovative agricultural practices and solutions to enhance productivity and sustainability in farming operations.",
       features: ["Sustainable Farming", "Crop Management", "Agricultural Technology", "Supply Chain Optimization"],
       link: "/services/agriculture",
-      gradient: "from-lime-500/10 to-green-500/10"
+      gradient: "from-lime-500/10 to-green-500/10",
+      image: agricultureHero
     },
     {
       icon: Pickaxe,
@@ -61,7 +73,8 @@ const Services = () => {
       description: "Responsible mining operations with focus on environmental sustainability and community development.",
       features: ["Sustainable Mining", "Resource Exploration", "Environmental Management", "Community Development"],
       link: "/services/mining",
-      gradient: "from-slate-500/10 to-zinc-500/10"
+      gradient: "from-slate-500/10 to-zinc-500/10",
+      image: miningHero
     },
     {
       icon: Languages,
@@ -69,7 +82,8 @@ const Services = () => {
       description: "Professional language translation services bridging communication barriers across global markets.",
       features: ["Document Translation", "Interpretation Services", "Localization", "Multilingual Support"],
       link: "/services/translation",
-      gradient: "from-pink-500/10 to-rose-500/10"
+      gradient: "from-pink-500/10 to-rose-500/10",
+      image: translationHero
     }
   ];
 
@@ -103,12 +117,20 @@ const Services = () => {
               to={service.link}
               className={`group hover-lift cursor-pointer fade-in-up stagger-${index + 1}`}
             >
-              <Card className="h-full border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card to-card/80 hover:shadow-2xl hover:shadow-primary/20">
+              <Card className="h-full border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card to-card/80 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
+                  <div className={`absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg`}>
+                    <service.icon className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
                 <CardContent className="p-8">
                   <div className="mb-6">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
-                      <service.icon className="w-10 h-10 text-primary group-hover:text-primary transition-colors duration-300" />
-                    </div>
                     <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>

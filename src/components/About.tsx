@@ -1,11 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Lightbulb, Sparkles, TrendingUp, Users } from "lucide-react";
+import aboutBackground from "@/assets/about-background.jpg";
 
 const About = () => {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background"></div>
+      {/* Animated Background with Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={aboutBackground} 
+          alt="About Rakestar Group" 
+          className="w-full h-full object-cover opacity-5"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+      </div>
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
 
