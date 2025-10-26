@@ -88,11 +88,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+    <section id="services" className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-background/95 to-background">
+      {/* Darker Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-30"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float opacity-30"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '3s' }}></div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
