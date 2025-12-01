@@ -63,7 +63,7 @@ const ICTPage = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${ictHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -74,7 +74,7 @@ const ICTPage = () => {
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6">
               ICT <span className="text-gradient">Solutions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
               Cutting-edge technology solutions including software development, system integration, and digital transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

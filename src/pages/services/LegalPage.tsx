@@ -63,7 +63,7 @@ const LegalPage = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${legalHero})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -74,7 +74,7 @@ const LegalPage = () => {
             <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6">
               Legal <span className="text-gradient">Services</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
               Comprehensive legal counsel and representation across various practice areas with international expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
