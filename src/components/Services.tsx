@@ -184,7 +184,7 @@ const Services = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="border-2 border-primary-foreground bg-background/10 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground hover:text-background hover-lift text-lg px-8 py-6 h-auto transition-all"
+                  className="border-2 border-primary-foreground bg-background/10 backdrop-blur-sm text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover-lift text-lg px-8 py-6 h-auto transition-all"
                 >
                   Download Brochure
                 </Button>
