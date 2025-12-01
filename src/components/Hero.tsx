@@ -42,14 +42,14 @@ const Hero = () => {
               Discover Our Services
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-primary-foreground bg-background/10 backdrop-blur-sm text-primary-foreground hover:bg-primary-foreground hover:text-background px-8 py-4 group transition-all"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
-            </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-2 border-primary-foreground bg-background/10 backdrop-blur-sm text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary px-8 py-4 group transition-all"
+          >
+            <Play className="mr-2 h-5 w-5" />
+            Watch Our Story
+          </Button>
           </div>
 
           {/* Key Statistics */}
