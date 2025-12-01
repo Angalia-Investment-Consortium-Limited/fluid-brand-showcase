@@ -124,19 +124,19 @@ const Services = () => {
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
-                  <div className={`absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg`}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20"></div>
+                  <div className={`absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-border/50`}>
                     <service.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <CardContent className="p-8">
+                <CardContent className="p-8 bg-card/95 backdrop-blur-sm">
                   <div className="mb-6">
                     <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
                   </div>
                   
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-foreground/80 leading-relaxed mb-6">
                     {service.description}
                   </p>
 
