@@ -5,51 +5,31 @@ import { Menu, X } from "lucide-react";
 import rakestarLogo from "@/assets/rakestar-white-logo.png";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Philosophy", href: "#philosophy" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-white backdrop-blur-md shadow-soft border-b border-border/50 translate-y-0"
-          : "bg-transparent -translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white backdrop-blur-md shadow-soft border-b border-border/50 translate-y-0`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Only visible when scrolled */}
-          {isScrolled && (
-            <Link
-              to="/"
-              className="flex items-center space-x-3 fade-in-left hover:opacity-80 transition-opacity"
-            >
-              <img
-                src={rakestarLogo}
-                alt="Rakestar Group Logo"
-                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
-              />
-              {/* <span className="font-display text-xl font-semibold text-foreground">
-                Rakestar Group
-              </span> */}
-            </Link>
-          )}
+
+          <a
+            href="#home"
+            className="flex items-center space-x-3 fade-in-left hover:opacity-80 transition-opacity"
+          >
+            <img
+              src={rakestarLogo}
+              alt="Rakestar Group Logo"
+              className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -64,12 +44,14 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button
-              variant="default"
-              className="fade-in-up stagger-6 hover-glow"
-            >
-              Get Started
-            </Button>
+            <a href="#contact">
+              <Button
+                variant="default"
+                className="fade-in-up stagger-6 hover-glow"
+              >
+                Contact
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,9 +81,11 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" className="mt-4 w-fit hover-glow">
-                Get Started
-              </Button>
+              <a href="#contact">
+                <Button variant="default" className="mt-4 w-fit hover-glow">
+                  Contact
+                </Button>
+              </a>
             </div>
           </div>
         )}
