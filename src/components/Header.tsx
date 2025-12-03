@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import rakestarLogo from "@/assets/rakestar-logo.png";
+import rakestarLogo from "@/assets/rakestar-white-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +25,10 @@ const Header = () => {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border/50 translate-y-0" 
+        isScrolled
+          ? "bg-white backdrop-blur-md shadow-soft border-b border-border/50 translate-y-0"
           : "bg-transparent -translate-y-full"
       }`}
     >
@@ -36,15 +36,18 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo - Only visible when scrolled */}
           {isScrolled && (
-            <Link to="/" className="flex items-center space-x-3 fade-in-left hover:opacity-80 transition-opacity">
-              <img 
-                src={rakestarLogo} 
-                alt="Rakestar Group Logo" 
+            <Link
+              to="/"
+              className="flex items-center space-x-3 fade-in-left hover:opacity-80 transition-opacity"
+            >
+              <img
+                src={rakestarLogo}
+                alt="Rakestar Group Logo"
                 className="h-10 w-auto transition-transform duration-300 hover:scale-105"
               />
-              <span className="font-display text-xl font-semibold text-foreground">
+              {/* <span className="font-display text-xl font-semibold text-foreground">
                 Rakestar Group
-              </span>
+              </span> */}
             </Link>
           )}
 
@@ -54,12 +57,17 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 fade-in-up stagger-${index + 1}`}
+                className={`text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 fade-in-up stagger-${
+                  index + 1
+                }`}
               >
                 {item.name}
               </a>
             ))}
-            <Button variant="default" className="fade-in-up stagger-6 hover-glow">
+            <Button
+              variant="default"
+              className="fade-in-up stagger-6 hover-glow"
+            >
               Get Started
             </Button>
           </div>
@@ -83,7 +91,9 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-medium text-foreground/80 hover:text-primary transition-colors fade-in-up stagger-${index + 1}`}
+                  className={`text-sm font-medium text-foreground/80 hover:text-primary transition-colors fade-in-up stagger-${
+                    index + 1
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
