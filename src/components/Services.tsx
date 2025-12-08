@@ -163,57 +163,57 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Link
-              key={service.title}
-              to={service.link}
-              className={`group hover-lift cursor-pointer fade-in-up stagger-${
-                index + 1
-              }`}
-            >
-              <Card className="h-full border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card to-card/80 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20"></div> */}
-                  <div
-                    className={`absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-border/50`}
-                  >
-                    <service.icon className="w-8 h-8 text-primary" />
-                  </div>
+            // <Link
+            //   key={service.title}
+            //   to={service.link}
+            //   className={`group hover-lift cursor-pointer fade-in-up stagger-${
+            //     index + 1
+            //   }`}
+            // >
+            <Card className="h-full border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card to-card/80 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20"></div> */}
+                <div
+                  className={`absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br ${service.gradient} backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-border/50`}
+                >
+                  <service.icon className="w-8 h-8 text-primary" />
                 </div>
-                <CardContent className="p-8 bg-card/95 backdrop-blur-sm">
-                  <div className="mb-6">
-                    <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                  </div>
+              </div>
+              <CardContent className="p-8 bg-card/95 backdrop-blur-sm">
+                <div className="mb-6">
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
 
-                  <p className="text-foreground/80 leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                <p className="text-foreground/80 leading-relaxed mb-6">
+                  {service.description}
+                </p>
 
-                  <div className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div
-                        key={feature}
-                        className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors"
-                      >
-                        <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
+                <div className="space-y-2 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <div
+                      key={feature}
+                      className="flex items-center text-sm text-muted-foreground group-hover:text-foreground transition-colors"
+                    >
+                      <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mr-3"></div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-4 transition-all duration-300">
-                    <span>Learn More</span>
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
+                {/* <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-4 transition-all duration-300">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </div> */}
+              </CardContent>
+            </Card>
+            // </Link>
           ))}
         </div>
 
@@ -242,8 +242,8 @@ const Services = () => {
                     {/* <ArrowRight className="ml-2 h-5 w-5" /> */}
                   </a>
                 </Button>
-                {/* <Button 
-                  size="lg" 
+                {/* <Button
+                  size="lg"
                   variant="outline"
                   className="border-2 border-primary-foreground bg-background/10 backdrop-blur-sm text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover-lift text-lg px-8 py-6 h-auto transition-all"
                 >
