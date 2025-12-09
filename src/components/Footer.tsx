@@ -53,8 +53,8 @@ const Footer = () => {
             </Link>
             <p className="text-secondary-foreground/80 leading-relaxed mb-6 max-w-md">
               Empowering progress through integrated excellence across
-              logistics, finance, legal, ICT, agriculture, mining, and
-              translation services worldwide.
+              logistics, finance, legal, ICT, agribusiness, mining, and
+              government relations worldwide.
             </p>
             <div className="space-y-2 text-sm">
               <p className="text-secondary-foreground/80">

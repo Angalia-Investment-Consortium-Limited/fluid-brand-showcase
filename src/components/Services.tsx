@@ -58,8 +58,9 @@ const Services = () => {
       description:
         "Comprehensive legal counsel and representation across various practice areas with international expertise.",
       features: [
-        "Corporate Law",
-        "Commercial Litigation",
+        "Corporate & Commercial Law",
+        "Real Estate & Conveyancing",
+        "Employment & Labour matters",
         "Regulatory Compliance",
         "International Law",
       ],
@@ -84,7 +85,7 @@ const Services = () => {
     },
     {
       icon: Wheat,
-      title: "Agriculture",
+      title: "Agribusiness",
       description:
         "Innovative agricultural practices and solutions to enhance productivity and sustainability in farming operations.",
       features: [
@@ -114,14 +115,14 @@ const Services = () => {
     },
     {
       icon: Languages,
-      title: "Translation Services",
+      title: "Government Relations",
       description:
-        "Professional language translation services bridging communication barriers across global markets.",
+        "Rakestar Group offers expert facilitation and moderation of services to guide organizations throght critical discussions, planning processes, and collaborative endeavors, ensuring productive outcomes.",
       features: [
-        "Document Translation",
-        "Interpretation Services",
-        "Localization",
-        "Multilingual Support",
+        "Meeting & Conference Moderation",
+        "Strategic Planning Workshops",
+        "Board & Leadership Retreats",
+        "Change Management Faciitation",
       ],
       link: "/services/translation",
       gradient: "from-pink-500/10 to-rose-500/10",
